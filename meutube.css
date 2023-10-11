@@ -1,0 +1,250 @@
+*{
+  padding: 0;
+  margin: 0;
+  list-style:none;
+}
+
+html,body{
+  height: 100%;
+
+  /*Cor do fundo do site*/
+  background-color: black;
+  /*cor de todas as letras do site*/
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#pagina{
+  /*REMOVIDO
+  background-color: aquamarine;*/
+
+  display: grid;
+  /*se você mudar as posições aqui mudar lá no layout, porém, a ARVORE DUM não muda - arvore dum é o código html o que muda é só o CSS. */
+
+  /*APAGAREI ESSA FORMA E FAAREI DA OUTRA
+  grid-template-areas:'t t t t'
+                      'v v v r'
+                      'f f f f';*/
+
+
+  /* Poderia também ser feito dessa forma*/
+  /*background-color: aquamarine;*/
+  /*display:grid;*/
+  grid-template-areas:'t t'
+                      'v r'
+                      'f f';
+  /*height: 100%;*/
+  /*grid-template-rows:70px 1fr 40px 
+;*/
+  height: 100%;
+                         
+  
+
+  /*TAMANHO QUE VAI ERE CAADA ELEMENTO 1FR 3FR 1 FRÇÃO 3 FRAÇÃO.*/
+
+
+
+
+
+
+  /*aqui está tudo igual o layout todos na mesma proporção, só que não é assim o layout tem um espaço maior e outro menor e por isso vamos fazer o grid-templates-rows abaixo*/ 
+  /*height: 100%;*/
+  
+  /*primera 70px a seguanda fr quer dizer uma fração o que sobrar vai pra ela. E o footer 40px  */
+  grid-template-rows:250px 1fr 40px ;   
+  grid-template-columns: 3fr 1fr;               
+}
+
+#topo{
+  /* REMOVIDO background-color: black;*/
+  grid-area: t;
+  background-color: rgb(83,82,82,0.5);
+  /*os elemento um do lado do outro*/
+  display: flex;
+  /*alinhando ao centro do topo no meio*/
+  align-items: center;
+  /* jeito que vai está justiuficado no horizontal cad um na ponta do site*/
+  justify-content: space-between;
+  /*REMOVIDO color: white;*/
+  padding: 5px;
+}
+#logo img{
+  /*limita o tamanho*/
+  height: 50px;
+  /*flutuar a esquerda lado a lado do texto*/
+  float: left;
+  /*para afastar ela um pouquinho do texto*/
+  margin-right: 20px;
+
+}
+
+#logo{
+  font-size: 25px;
+  line-height: 50px;
+  font-weight: bold;
+  padding: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  #logo span{
+  color: red;  
+  }
+
+  /* o elemento do menu vai ter um margin de 20px*/
+  #topo nav{
+    margin-right: 20px;
+  }
+
+  #menu{
+    /*coloca um elemento do lado do outro*/
+    display: flex;
+    justify-content: right;
+    align-items: center;
+  }
+  /*todos os a que tiver dentro de uma li que tiverem dentro do menu vai ter esse comportamento*/
+  #menu li a{
+    color: white;
+    /*TIRAR
+    background-color: red;*/
+    padding: 15px;
+  }
+
+  #menu li a:hover{
+    background-color: white;
+    color: rgb(83,82,82,0.5);
+
+
+  }
+
+
+
+#player{
+  /*REMOVER 
+  background-color: red;*/
+  padding: 20PX;
+  grid-area: v;
+}
+
+/*a tag video que tiver dentro do player vai ter um widht de 100*/
+#player video{
+  /*isso fez o player respeitar o tamanho da caixa*/
+width: 100%;
+}
+
+#player textarea{
+  width: calc(100% - 20px);
+  /* TIREI PORQUE ESTOUROU E FIXZ O DE CIMA
+  width: 100%;*/
+
+  /*descolar o texto*/
+  padding: 10px;
+
+  min-height: 200px;
+  /* Obs: a caixa do comentário ela estorou porque o padding conta no tamanho se é 100% fica 
+  10 de padding
+  10 de padding
+  vai pra 120%
+  Ai eu tenho que controlar mexendo na propriedade na caixa.
+  
+  masis agora eu vou usar o calc para corrigir isso.*/
+}
+
+#relacionados{
+  /*TIRAR background-color: blue;*/
+  padding: 20px;
+  grid-area: r;
+  /*respeitar ou seja não vai
+  
+  /*não vai estoura a altura maxima da caixa*/
+  max-height: 100%;
+
+  /*quando o y for estourado*/
+  /* comportamentos 
+  HIDDEN elemento somem;
+  VISIBLE é o padrão ele vai ampliar a janela para caber tudo;
+  SCROOL ele cria uma barra de rolagem interna só para os elementos
+  */
+  overflow-y: scroll; 
+}
+
+#relacionados ul li a img{
+width: 100%;
+}
+
+#relacionados ul li{
+  /*separa um li do outro*/
+  margin-bottom: 10px;
+border: 10px solid rgb(83,82,82,0.5);
+}
+
+#relacionados ul li:hover{
+  border-color: white;
+}
+
+
+#footer{
+ /*TIREI background-color: blueviolet;*/
+ background-color: rgb(83,82,82,0.5);
+  grid-area: f;
+  text-align: center;
+  line-height: 40px;  
+  font-size: 12px;
+}
+
+#footer span{
+background-color: red;  
+font-weight: bold;
+}
+/*daqui pra baixo é como eu vou fazer o layout responsivo*/
+@media screen and (max-width:700px) {
+  #pagina{
+    display: grid;
+    grid-template-areas:'t'
+                        'v'
+                        'r'
+                        'f';
+    height: 100%;
+    margin: auto;    
+    grid-template-rows: 140px 1fr 1fr 40px;   
+    grid-template-columns: auto               
+  }
+  
+  #topo{    
+    flex-direction: column;
+    justify-content:space-evenly;   
+  }
+
+  #player textarea{
+    min-height: 50px;
+  }
+
+  #relacionados{
+    padding: 20px 10px;
+    min-height: 100px;
+    overflow-y: hidden; 
+  }
+
+  #relacionados ul{
+    display: flex;
+    overflow-x: scroll;
+  }
+  
+  #relacionados ul li a img{
+  width: 100%;
+  }
+  
+  #relacionados ul li{
+  margin: 0 10px 0;
+  min-width: 150px;
+  }
+
+  #footer{
+  line-height: 20px;  
+  font-size: 10px;
+  }
+
+  #footer span{
+    display: none;
+    }
+  
+}
