@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MeuTube</title>
+    <link rel="stylesheet" href="meutube.css" />
+
+    <!--aqui é pra colocar o fav icon lá em cima-->
+    <link rel="shortcut icon" href="imagens/icone.ico" type="imagens/x-ico" />
+  </head>
+  <body>
+    <!--quando um usuário deficiente audio visual abre o site vai dizer assim voce está na sessão pagina
+  
+  Na sessão pagina vai ter a 
+  barra do topo
+  video
+  menu lateral
+  footer
+-->
+    <section id="pagina">
+      <!--Em cima agente usa a tag **HEAD** que é o cabeçalho do site. Lembra o HEAD ele é o cabeçalho da pagina ele não aparece. Já o HEADER vai aparece POIS ELE é o cabeçalho do site-->
+      <header id="topo">
+        <div id="logo">
+          <img src="imagens/youtube.png" /> <span>Meu</span>Tube
+        </div>
+        <nav>
+          <ul id="menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Favorito</a></li>
+            <li><a href="#">Meus Videos</a></li>
+            <li><a href="#">Sair</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!--O MAIN é o principal do meu site o que ela vai ver aqui é neste caso o video-->
+      <main id="player">
+        <!--controls é uma função boleana para aparecer o player do video-->
+        <!--<div>-->
+        <video controls>
+          <source src="videos/1 .mp4" type="video/mp4" />
+        </video>
+
+        <textarea placeholder="Escreva seu comentário..."></textarea>
+        <!--</div>-->
+      </main>
+
+      <!--ASIDE seria um menu auxiliar para o seu site-->
+      <aside id="relacionados">
+        <!--Cria um lista-->
+        <ul>
+          <!--Pra cada video uma <li> para cada <li> um <a> pra cada <a> uma imagem e essas imagem vai da pasta imagens/relacionadas.-->
+          <li><a href=""><img src="imagens/relacionados.jpg"></a></li>
+          <li><a href=""><img src="imagens/relacionados.jpg"></a></li>
+          <li><a href=""><img src="imagens/relacionados.jpg"></a></li>
+          <li><a href=""><img src="imagens/relacionados.jpg"></a></li>
+          <li><a href=""><img src="imagens/relacionados.jpg"></a></li>
+          <li><a href=""><img src="imagens/relacionados.jpg"></a></li>
+          <li><a href="meutube/imagens/relacionados.jpg"></a></li><li><a href=""><img src="imagens/relacionados.jpg"></a></li>
+          <li><a href="meutube/imagens/relacionados.jpg"></a></li><li><a href=""><img src="imagens/relacionados.jpg"></a></li>
+          <li><a href=""><img src="imagens/relacionados.jpg"></a></li>
+          <li><a href="meutube/imagens/relacionados.jpg"></a></li><li><a href=""><img src="imagens/relacionados.jpg"></a></li>
+          <li><a href=""><img src="imagens/relacionados.jpg"></a></li>
+          <li><a href=""><img src="imagens/relacionados.jpg"></a></li>
+          <li><a href=""><img src="imagens/relacionados.jpg"></a></li>
+          <li><a href=""><img src="imagens/relacionados.jpg"></a></li>
+          <li><a href=""><img src="imagens/relacionados.jpg"></a></li>
+          <li><a href="meutube/imagens/relacionados.jpg"></a></li><li><a href=""><img src="imagens/relacionados.jpg"></a></li>
+        </ul>
+      </aside>
+      <footer id="footer">
+        &copy; Todos os direitos reservados <span>Prof. Luciano Francsico</span>
+      </footer>
+    </section>
+  </body>
+</html>
+
+<!--LAYOUT que cresce de acordo ao tamanho da tela chama-se layout elastico 
+  LAYOUT FUIDO esse layout que vai se esticando para atende o layout da pagina para atender as dimensoes da pagina que é o primeiro layout que fizemso. 
+
+LAYOUT FIXO - Agente redimenciona a janela e quando a pagina chegar na resolução de 1096, ou seja, no especificada do parametro  ela cria barras abaixo.
+WIDTH: 1096;
+MARGIN: AUTO;
+
+LAYOUT HIBRIDO - Mistura as duas tecnologias a do fluido com a do fixo. Ele conforme ele vai diminuido ele vai se ajustando porem vai chegar umcerto tamanho que ele vai corta e ai aparecer a barra de rolagem para você ver o resto.
+MAX-WIDTH:1096px;
+MIN-WIDTH:700px;
+MARGIN: AUTO;
+
+LAYOUT ELASTICO - Ele é configurado proprocionalmente ao tamanho da fonte ele fica igual aqueles site pra acessibilidade se aumentar a janela aumenta as letras aumenta tudo mais para isso tem que mudar todas as fontes para o padrão (EM) E todas as resoluções, ou seja, e larguras também para o padrão (EM). É como se colocasse o botão de zoom do navegador no seu site ele vai crescer juntinho com o zooom.
+WIDTH:50em;
+MARGIN: AUTO;
+
+
+LAYOUT RESPONSIVO - Ele PARECE COMO O PADRÃO HIBRIDO VOCÊ VAI PLANEJAR UMA RESOLUÇÃO MAXIMA E UMA MINIMA. Só que voc~e não vai mudar só o limitando voc~e não vai só limitar você vai alterar o CSS para este tipo de resolução
+
+EXEMPLO:
+abaixo do footer 
+media screen and (max-widht:700px){
+aqui dentro voc~e pode alterar o css todinho que vc quer do seu site.
+e ele fica responsivo.
+} 
+-->
